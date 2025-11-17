@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 99
+  controlID: 95
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 37
+  controlID: 47
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -380,7 +380,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/MyModels/AppleBasket
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -390,16 +390,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/MyModels/AppleBasket
+  - Assets/Texture_Me
   m_LastFoldersGridSize: 71
-  m_LastProjectPath: D:\Unity-Project\Medieval delivery
+  m_LastProjectPath: C:\Users\Denisa\OneDrive\Desktop\Facultate\An3\ProiectUnity\Unity-Project\Medieval
+    delivery
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 139}
-    m_SelectedIDs: dcae0000
-    m_LastClickedID: 44764
-    m_ExpandedIDs: 0000000036ac000038ac00003aac00003cac00003eac000040ac000026ae00002cae00002eae000030ae000032ae00003aae000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 96ab0000
+    m_LastClickedID: 43926
+    m_ExpandedIDs: 0000000096ab000098ab00009aab00009cab00009eab0000a0ab0000a4ab0000a6ab0000a8ab0000aaab0000acab00000ead000014ad000056ad000052b00000a8b3000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -428,7 +429,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000036ac000038ac00003aac00003cac00003eac000040ac0000
+    m_ExpandedIDs: 0000000096ab000098ab00009aab00009cab00009eab0000a0ab0000a2ab0000a4ab0000a6ab0000a8ab0000aaab0000acab0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +577,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 56f7ffff
+      m_ExpandedIDs: 16fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1048,11 +1049,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.066310495, y: 0.9281545, z: -0.3061492, w: 0.20103413}
     speed: 2
-    m_Value: {x: 0.067288585, y: 0.92729694, z: -0.30710068, w: 0.20317948}
+    m_Value: {x: 0.066310495, y: 0.9281546, z: -0.3061492, w: 0.20103414}
   m_Size:
     m_Target: 0.8795047
     speed: 2
-    m_Value: 0.8416313
+    m_Value: 0.8795047
   m_Ortho:
     m_Target: 0
     speed: 2
