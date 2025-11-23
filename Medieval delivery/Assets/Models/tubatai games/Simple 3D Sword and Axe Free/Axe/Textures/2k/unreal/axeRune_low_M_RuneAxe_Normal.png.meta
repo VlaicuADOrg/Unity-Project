@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 5d0d8f6f4883af54384261d8dc6ecc47
+AssetOrigin:
+  serializedVersion: 1
+  productId: 315552
+  packageName: Simple 3D Sword and Axe Free
+  packageVersion: 1.0.0
+  assetPath: Assets/tubatai games/Simple 3D Sword and Axe Free/Axe/Textures/2k/unreal/axeRune_low_M_RuneAxe_Normal.png
+  uploadId: 744618
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -7,7 +14,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -54,7 +61,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 1
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -141,10 +148,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 315552
-  packageName: Simple 3D Sword and Axe Free
-  packageVersion: 1.0.0
-  assetPath: Assets/tubatai games/Simple 3D Sword and Axe Free/Axe/Textures/2k/unreal/axeRune_low_M_RuneAxe_Normal.png
-  uploadId: 744618
