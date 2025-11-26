@@ -62,11 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-    <Compile Include="Assets\Trees\ALP_Assets\Big Oak Tree FREE\Core\Scripts\Global Lighting\Editor\ALP8310_GlobalLightingWindow.cs" />
-    <Compile Include="Assets\Models\Viking Village\Shaders\Editor\TerrainSurfaceGUI.cs" />
-    <Compile Include="Assets\Trees\ALP_Assets\Big Oak Tree FREE\Core\Scripts\GUI\Editor\ALP8310_ShaderDrawers.cs" />
-    <Compile Include="Assets\Trees\ALP_Assets\Big Oak Tree FREE\Core\Scripts\Global Lighting\Editor\ALP8310_LightsSettings.cs" />
-    <Compile Include="Assets\Trees\ALP_Assets\Big Oak Tree FREE\Core\Scripts\GUI\Editor\ALP8310_ShaderGUI.cs" />
+    <Compile Include="Assets\Rendering\Shaders\Editor\TerrainSurfaceGUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1342,14 +1338,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{DCDBE1D9-2999-7087-72C8-45815A9D2158}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="ALP8310_ControllerGlobal.Editor.csproj">
-      <Project>{2AC247D1-D2BA-B6B8-F55C-DA47318BD27F}</Project>
-      <Name>ALP8310_ControllerGlobal.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ALP8310_ControllerGlobal.csproj">
-      <Project>{0D9C0B87-4EFC-4B5B-B626-40265A9C950A}</Project>
-      <Name>ALP8310_ControllerGlobal</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
