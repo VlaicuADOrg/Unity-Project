@@ -62,13 +62,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ExitButton.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Animals\MovePlayerInput.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Animals\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Scripts\GamePlayer.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Animals\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\ControlsButton.cs" />
     <Compile Include="Assets\Scripts\InventoryToggle.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Shaders\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\Scripts\CreditsButton.cs" />
+    <Compile Include="Assets\Scripts\AnimationControllerGoat&amp;Sheep.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Animals\CreatureMover.cs" />
     <Compile Include="Assets\Scripts\CreditsScroll.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +100,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Rendering\Render_Pipeline_Convert\Documentation.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
@@ -1115,6 +1121,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.AI.Navigation">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
       <Private>False</Private>
@@ -1273,6 +1283,10 @@
     </Reference>
     <Reference Include="Unity.Rendering.LightTransport.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.Rendering.LightTransport.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
