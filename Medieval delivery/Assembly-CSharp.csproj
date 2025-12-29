@@ -65,19 +65,26 @@
     <Compile Include="Assets\Scripts\Scripts_Animals\MovePlayerInput.cs" />
     <Compile Include="Assets\Scripts\Scripts_Animals\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Scripts\MapToggle.cs" />
+    <Compile Include="Assets\Scripts\Quests\ClickToQuestInteract.cs" />
+    <Compile Include="Assets\Scripts\Quests\ItemPickup.cs" />
     <Compile Include="Assets\Scripts\NPC_Wander.cs" />
     <Compile Include="Assets\Scripts\GamePlayer.cs" />
+    <Compile Include="Assets\Scripts\Quests\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Scripts_Animals\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\ControlsButton.cs" />
     <Compile Include="Assets\Scripts\InventoryToggle.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestCatalog.cs" />
     <Compile Include="Assets\Scripts\SimpleGemsAnim.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Shaders\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\Scripts\CreditsButton.cs" />
     <Compile Include="Assets\Scripts\AnimationControllerGoat&amp;Sheep.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\PlayerMapIcon.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestPopupUI.cs" />
     <Compile Include="Assets\Scripts\Scripts_Animals\CreatureMover.cs" />
     <Compile Include="Assets\Scripts\CreditsScroll.cs" />
   </ItemGroup>
