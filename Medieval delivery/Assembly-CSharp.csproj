@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Scripts_Animals\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\ControlsButton.cs" />
     <Compile Include="Assets\Scripts\InventoryToggle.cs" />
+    <Compile Include="Assets\Scripts\SimpleGemsAnim.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Shaders\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\Scripts\CreditsButton.cs" />
