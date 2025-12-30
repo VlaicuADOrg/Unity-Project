@@ -11,8 +11,8 @@ public class QuestGiver : MonoBehaviour
     public bool loadFromCatalog = true;
 
     [Tooltip("How many quests (random) this NPC will have available at start.")]
-    public int minQuests = 3;
-    public int maxQuests = 6;
+    public int minQuests = 1;
+    public int maxQuests = 8;
 
     public List<Quest> quests = new();
 
