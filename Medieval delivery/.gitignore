@@ -41,3 +41,5 @@ Library/
 obj/
 Temp/
 Logs/
+# Unity recovery scenes (do NOT commit)
+Assets/_Recovery/
