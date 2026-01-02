@@ -40,4 +40,6 @@ public class PlayerInventory : MonoBehaviour
         if (_counts[itemTag] <= 0) _counts.Remove(itemTag);
         return true;
     }
+    public IReadOnlyDictionary<string, int> Items => _counts;
+
 }

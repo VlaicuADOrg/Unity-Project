@@ -1,52 +1,77 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class NPC_Wander : MonoBehaviour
 {
-    [Header("Movement")]
-    public float wanderRadius = 12f;      // mai mare = merge mai mult
-    public float stoppingDistance = 0.6f;
-
-    [Header("Idle")]
-    public float minIdleTime = 1f;
-    public float maxIdleTime = 3f;
-
     private NavMeshAgent agent;
-    private Animator anim;
-    private float idleTimer;
-    private float currentIdleTime;
-    private bool isWaiting;
+    private Animator animator;
+
+    public float wanderRadius = 15f;
+    public float minWanderDistance = 6f;
+
+    public float minWaitTime = 2f;
+    public float maxWaitTime = 4f;
+
+    float waitTimer;
+    float currentWaitTime;
+    bool isWaiting;
+    bool hasStarted;
+
+    void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
+    }
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        anim = GetComponentInChildren<Animator>();
+        if (!agent.isOnNavMesh)
+        {
+            enabled = false;
+            return;
+        }
 
-        agent.stoppingDistance = stoppingDistance;
-        agent.autoBraking = false; // 🔥 foarte important
+        agent.stoppingDistance = 0.5f;
+        agent.autoBraking = false;
 
-        PickNewIdleTime();
+        currentWaitTime = Random.Range(minWaitTime, maxWaitTime);
+
+        // Delay random la start (CHEIA)
+        Invoke(nameof(StartWander), Random.Range(0.2f, 1.2f));
+    }
+
+    void StartWander()
+    {
+        hasStarted = true;
         MoveToNewPoint();
     }
 
     void Update()
     {
-        // Animatie lina (fara sacadare)
-        anim.SetFloat("Speed", agent.velocity.magnitude, 0.1f, Time.deltaTime);
+        if (!hasStarted)
+            return;
+
+        animator.SetFloat(
+            "Speed",
+            agent.velocity.magnitude,
+            0.1f,
+            Time.deltaTime
+        );
 
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             if (!isWaiting)
             {
                 isWaiting = true;
-                idleTimer = 0f;
+                waitTimer = 0f;
             }
 
-            idleTimer += Time.deltaTime;
+            waitTimer += Time.deltaTime;
 
-            if (idleTimer >= currentIdleTime)
+            if (waitTimer >= currentWaitTime)
             {
-                PickNewIdleTime();
+                currentWaitTime = Random.Range(minWaitTime, maxWaitTime);
                 MoveToNewPoint();
                 isWaiting = false;
             }
@@ -55,22 +80,28 @@ public class NPC_Wander : MonoBehaviour
 
     void MoveToNewPoint()
     {
-        Vector3 newPos = RandomNavSphere(transform.position, wanderRadius);
+        Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, minWanderDistance);
         agent.SetDestination(newPos);
     }
 
-    void PickNewIdleTime()
+    Vector3 RandomNavSphere(Vector3 origin, float maxDist, float minDist)
     {
-        currentIdleTime = Random.Range(minIdleTime, maxIdleTime);
-    }
+        if (minDist >= maxDist)
+            minDist = maxDist * 0.5f;
 
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist)
-    {
-        Vector3 rand = Random.insideUnitSphere * dist;
-        rand.y = 0;
-        rand += origin;
+        for (int i = 0; i < 10; i++) // REDUS de la 30
+        {
+            Vector3 rand = Random.insideUnitSphere * maxDist;
+            rand.y = 0;
+            rand += origin;
 
-        NavMesh.SamplePosition(rand, out NavMeshHit hit, dist, NavMesh.AllAreas);
-        return hit.position;
+            if (Vector3.Distance(origin, rand) < minDist)
+                continue;
+
+            if (NavMesh.SamplePosition(rand, out NavMeshHit hit, maxDist, NavMesh.AllAreas))
+                return hit.position;
+        }
+
+        return origin;
     }
 }
