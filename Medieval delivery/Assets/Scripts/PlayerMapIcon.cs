@@ -13,9 +13,14 @@ public class PlayerMapIcon : MonoBehaviour
     void Start()
     {
         Terrain terrain = Terrain.activeTerrain;
-        if (terrain == null) return;
 
-        hasTerrain = true;
+        if (terrain == null)
+        {
+            Debug.LogError("NO ACTIVE TERRAIN FOUND");
+            return;
+        }
+
+        Debug.Log("Terrain found: " + terrain.name);
 
         Vector3 terrainPos = terrain.transform.position;
         Vector3 terrainSize = terrain.terrainData.size;
@@ -25,7 +30,10 @@ public class PlayerMapIcon : MonoBehaviour
 
         minZ = terrainPos.z;
         maxZ = terrainPos.z + terrainSize.z;
+
+        Debug.Log($"Terrain bounds X: {minX} -> {maxX}, Z: {minZ} -> {maxZ}");
     }
+
 
     void Update()
     {
@@ -34,8 +42,8 @@ public class PlayerMapIcon : MonoBehaviour
 
         Vector3 pos = player.position;
 
-        float normalizedX = Mathf.InverseLerp(minX, maxX, pos.x);
-        float normalizedZ = Mathf.InverseLerp(minZ, maxZ, pos.z);
+        float normalizedX = Mathf.Clamp01(Mathf.InverseLerp(minX, maxX, pos.x));
+        float normalizedZ = Mathf.Clamp01(Mathf.InverseLerp(minZ, maxZ, pos.z));
 
         float mapWidth = mapRect.rect.width;
         float mapHeight = mapRect.rect.height;
