@@ -10,19 +10,19 @@ public class QuestSceneLoader : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (isOpen)
-                CloseInventory();
+                CloseQuestScene();
             else
-                OpenInventory();
+                OpenQuestScene();
         }
     }
 
-    void OpenInventory()
+    void OpenQuestScene()
     {
         SceneManager.LoadScene("Quests", LoadSceneMode.Additive);
         isOpen = true;
     }
 
-    void CloseInventory()
+    void CloseQuestScene()
     {
         SceneManager.UnloadSceneAsync("Quests");
         isOpen = false;
