@@ -47,6 +47,11 @@ public class QuestGiver : MonoBehaviour
                 _activeQuest.isCompleted = true;
                 _activeQuest.isActive = false;
 
+                if (QuestManager.I != null)
+                {
+                    QuestManager.I.activeQuests.Remove(_activeQuest);
+                }
+
                 QuestPopupUI.I.Show(QuestCatalog.BuildTurnInText(giverKey, displayName, _activeQuest));
                 _activeQuest = null;
             }
@@ -73,6 +78,12 @@ public class QuestGiver : MonoBehaviour
         picked.isActive = true;
         picked.isCompleted = false;
         _activeQuest = picked;
+
+        if (QuestManager.I != null)
+        {
+            if (!QuestManager.I.activeQuests.Contains(picked))
+                QuestManager.I.activeQuests.Add(picked);
+        }
 
         QuestPopupUI.I.Show(QuestCatalog.BuildGiveQuestText(giverKey, displayName, picked));
     }
