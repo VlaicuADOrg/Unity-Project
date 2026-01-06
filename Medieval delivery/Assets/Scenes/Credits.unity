@@ -494,30 +494,72 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Viking Village URP\tUnity Technologies\r\nPB Frontier Settlement\t3DForge\r\nRock
+  m_text: "Special thanks for:\n\nViking Village URP\tUnity Technologies\r\nRock
     and Boulders 2\tManufactura K4\r\nMid poly Axes Collection\tSky Den Games\r\nMobile
     White Birch Tree\tNext Spring\r\nTrees Collection Asset PBR\tMARCIN'S ASSETS\r\nHQ
     Autumn Dry Maple Trees\tDigitalAntichrist\r\nDry Trees\tDigitalAntichrist\r\nYughues
-    Free Palm Trees\tNobiax / Yughues\r\nRealistic Tree 10\tPixel Games\r\nWorld
-    Space Trees (FREE) - Shader\tRRFreelance\r\nSimple 3D Sword and Axe Free\t_tubataiGames\r\nRPG
-    Medieval Props Pack 01\tAstra Forge\r\nMedieval props\tLukas Bobor\r\nDETAILED
-    - Medieval Wells & Props\tAstrofish Games\r\nDigger - Advanced Operations\tAmandine
-    Entertainment\r\nPBR Crystals Pack\tBlue Olive Studios\r\nStylized Rock Pack
-    - 8 styles, 3 shapes, LODs, PBR\tAC Games Assets\r\nBlacksmith\t3DForge\r\nBlacksmith's
+    Free Palm Trees\tNobiax / Yughues\r\nWorld Space Trees (FREE) - Shader\tRRFreelance\r\nSimple
+    3D Sword and Axe Free\t_tubataiGames\r\nRPG Medieval Props Pack 01\tAstra Forge\r\nMedieval
+    props\tLukas Bobor\r\nDETAILED - Medieval Wells & Props\tAstrofish Games\r\nDigger
+    - Advanced Operations\tAmandine Entertainment\r\nPBR Crystals Pack\tBlue Olive
+    Studios\r\nStylized Rock Pack - 8 styles, 3 shapes, LODs, PBR\tAC Games Assets\r\nBlacksmith\t3DForge\r\nBlacksmith's
     Forge\t3DForge\r\nRPG Medieval Props DEMO\tPixel Games\r\nBig Oak Tree FREE\tALP\r\nCabin
     Environment\tGregory Seguru\r\nMedieval Chest\tAIV\r\nMedieval Flask\tAustin
-    Crane (Euclid)\r\nLow-poly medieval tavern\tLow-poly medieval tavern\r\nMedieval
-    Shield\tArtem Mykhailov\r\nMedieval Mortier\tViktorKom\r\nKickelhahn Tower\t3DHaupt\r\nMedieval
-    house\tVanuartw\r\nMedieval Castle\tU\u011Fur Yak\u0131\u015F\u0131k\r\nMedieval
+    Crane (Euclid)\r\nMedieval Shield\tArtem Mykhailov\r\nMedieval Mortier\tViktorKom\r\nKickelhahn
+    Tower\t3DHaupt\r\nMedieval house\tVanuartw\r\nMedieval Castle\tU\u011Fur Yak\u0131\u015F\u0131k\r\nMedieval
     banner\tejtam\r\nTrewidden medieval wayside cross\tTom Goskar\r\nMedieval Axe\tMohJeha\r\nMedieval
-    Mace\tadoblenderance \r\nHeavy Crossbow (Free)\twolfgar74\r\nImagine Menu\t\r\n2D
-    RPG Button 7\tJiroCraft\r\nInventory Frame \u2013 Leather Texture\tFreepik Contributor\r\nInventory
-    Background \u2013 Brown Canvas\tPixabay\r\nOutdoor Ground Textures\tA dog's life
-    software\r\nYughues Free Ground Materials\tNobiax / Yughues\r\nYughues Free Sand
-    Materials\tNobiax / Yughues\r\nYughues Free Nature Materials\tNobiax / Yughues\r\nStylize
-    Water Texture\tLowPolly\r\nRocks and Vegetation Pack URP\tGrapperGames Studio\r\nCartoon
-    Farm Crops\tFalse Wisp Studio\r\nNature Renderer 6\u30FBFree\tVisual Design Cafe\r\nPBR
-    Mushroom Pack Lite\tAdventure Forge\r\nMushroom Flora Pack\tLamoot's Game Art"
+    Mace\tadoblenderance \r\nHeavy Crossbow (Free)\twolfgar74\r\n2D RPG Button 7\tJiroCraft\r\nInventory
+    Frame \u2013 Leather Texture\tFreepik Contributor\r\nInventory Background \u2013
+    Brown Canvas\tPixabay\r\nOutdoor Ground Textures\tA dog's life software\r\nYughues
+    Free Ground Materials\tNobiax / Yughues\r\nYughues Free Sand Materials\tNobiax
+    / Yughues\r\nYughues Free Nature Materials\tNobiax / Yughues\r\nStylize Water
+    Texture\tLowPolly\r\nRocks and Vegetation Pack URP\tGrapperGames Studio\r\nCartoon
+    Farm Crops\tFalse Wisp Studio\r\nPBR Mushroom Pack Lite\tAdventure Forge\r\nMushroom
+    Flora Pack\tLamoot's Game Art\r\nMagic Potion Pack Free low-poly 3D model\tBree\r\nRPG/Fantasy
+    Food Items Pack\tPixeled Bun\r\nRPG Food Props DEMO\tAparicio Silva\r\nChests
+    Fantasy PBR - Mobile\tDragan Maric Gale\r\nRealistic Furry Wolf (FREE sample
+    REALISTIC FOREST ANIMALS)\tRip Vertices Studio\r\nAnimated Goat and Sheep- 3D
+    low poly-FREE\tUrsaAnimations\r\nAnimals FREE - Animated Low Poly 3D Models\tithappy\r\nFREE
+    Stylized Bear - RPG Forest Animal\tBlink\r\nProps Pack - Hay Bale\tPolyOne Studio\r\nkcisa
+    - Korean Traditional Festival\tKorea Culture Information Service Agency (kcisa)\r\nMedieval
+    vagrant Knights\tMotorLee\r\nMedieval Knight | Sculpture | Game ready\tby__Rx\r\nMedieval
+    woman figure\tmikurban\r\nAloy - free downlead\tAnimatorpark\r\nYoung Medieval
+    Boy [MESHY]\tEthan C\r\nLittle Girl Rigged 3D Model\tCG-Moon\r\nPrincess Nun
+    Royal Queen\tProzone\r\nMuscular Caveman\traydev\r\nAnimated Free Bison\tAnees
+    Animates\r\nVeste Coburg Saber\tleeeck\r\nMedieval Training Grounds - Game Environment\theathermichno\r\n\tmixamo\r\nSimple
+    Gems and Items Ultimate Animated Customizable Pack\tBenjaTheMaker\r\nAmiens\tThe
+    British Museum\r\r\nIncense Burner\tJoseph Casetta\r\nWax seal of the imperial
+    District Starost\tVirtual Museums of Ma\u0142opolska\r\r\nGolden and Silver Medieval
+    Chalice\tshazammm\r\nWarrior\tTaratatam\r\nRosary - Historic Environment Scotland\tleepriestley\r\nMandrake
+    - Castlevania\tAdrian Carter\r\nProcedural Eyes For Ray II\tChamberSu\r\nCC0
+    - Candle\tplaggy\r\nMoonstone_01\tvrobwal\r\nViking \"Tea\" Party - Animal Hide\tNicholas
+    Olsen\r\nwild boar from COTW game\tGame-animal ripper\r\nWolf Teeth Pendant\tThunk3D
+    3D Scanner\r\nWolf tooth pendant\tNancy/Lanzi Luo\r\nEdo Tusk, 1775-1777 CE\tMinneapolis
+    Institute of Art\r\r\nEgg\tjoe_carrot\r\nClaw Hammer and Sledge Hammer\tconkin\r\n[TF2
+    HD] Mad Milk\tJotC\r\nA bottle of expired milk from the USSR\t3dArt\r\nGlass
+    jar\tpranavchavan0937\r\nJar\tMoons\r\nSoap\tKroko.blend\r\nCloth\tReaperOfR\r\nRolled
+    Blanket\tnikolaigamasin\r\nVintage Leather Adventurer\u2019s Backpack\tMobashir
+    Tahsin\r\nQuiver and Arrows\tFinley Searle\r\nFolding fan\tIndividualist\r\nPorcelain
+    China Vase\trz\r\nHairpin\tlexanime\r\nArrowhead Iv1K11B3S2Q2N24\tArchaeological
+    Museum\r\nArrowhead Iv1K9B1N6\tIgor V. Denisov\r\nBirds feather\tIdmenthal\r\n3
+    Great Feathers Pack\tIncg5764\r\nBird feathers atlas\tden4ik4irik\r\nRaven in
+    Flight Pose\tPigcraft\r\nFalcon in Dynamic Flying Pose\tPigcraft\r\nLetter\tpowertomato\r\nDevice
+    for making powder in starch capsules\tVirtual Museums of Ma\u0142opolska\r\r\nMedieval
+    Iron caltrop, Castilla-La Mancha, Spain\tGlobal Digital Heritage and GDH-Afrika\r\r\nLockpicking
+    set\tDiccbudd\r\nLockpick set\tLeiona Chung\r\nBronze Age Spearhead\tThe British
+    Museum\r\r\nBronze Age Spearhead SL.746\tMicroPasts\r\r\nWorn bandages\tSousinho\r\nSpiky
+    Chain\tJorada\r\nChain\tJorada\r\nWW1 Vintage Compass\tChris Torres\r\nPirate
+    Spyglass\tkabukidanshii\r\nCoal\tEDUROCK \u2013 EDUCATIONAL VIRTUAL ROCK COLLECTION\r\nSilver
+    Bar\tElijah2001\r\nSurvival/Medieval Asset Tools\tRoboticModels\r\nold gold ingot\tGIYWBY\r\nBlacksmith
+    Ingots (game ready asset)\tAparicio Silva 3D\r\nGears\tmelaamory\r\nGears\tC\xE9cile
+    Amstad\r\r\nBell\tjQueary\r\nNails\tAlex Bes\r\nDeer Antler\tBortabetchia\r\nMint
+    Leaves\tZinaida.Kovrova\r\nRust Key\tAlexsn09\r\nChristmas toys\tDeployer\r\nPBR
+    Leather Straps\tFerocious Industry\r\nAutumn Hill View Grzegorz Wronkowski\r\nStylized
+    Lava materials\tRub Iuo\r\nMedieval Happy Music Tunetank\r\nMedieval Ambient\tDeusLower\r\nMedieval
+    Waltz Music\tTunetank\r\nMedieval Festive Music\tTunetank\r\nharp medieval\tjumpingbunny\r\nSci-fi
+    Portal Jump 04\tDRAGON-STUDIO\r\nSt2 - Footstep sfx\tData_pion\n\nCreators :
+    \nTitu  Andreea \nVilcu  Alessandra\nStoica  Denisa\nVlaicu  Andrei\n\n\n\r\nSci-fi
+    Portal Jump 04\tDRAGON-STUDIO\r\nSt2 - Footstep sfx\tData_pion"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\NPC_Wander.cs" />
     <Compile Include="Assets\Scripts\GamePlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerCarrierOnPlatform.cs" />
+    <Compile Include="Assets\Scripts\VolcanoEruptionController.cs" />
     <Compile Include="Assets\Scripts\Quests\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Scripts_Animals\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\ControlsButton.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\Scripts\CreditsButton.cs" />
     <Compile Include="Assets\Scripts\QuestSceneLoader.cs" />
     <Compile Include="Assets\Scripts\AnimationControllerGoat&amp;Sheep.cs" />
+    <Compile Include="Assets\Scripts\DragonFireTimedController.cs" />
     <Compile Include="Assets\Scripts\LiftButtonTwoWay.cs" />
     <Compile Include="Assets\Scripts\GnomeIdle.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />

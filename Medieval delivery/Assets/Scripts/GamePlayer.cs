@@ -57,10 +57,11 @@ namespace Assets.Lab9Assets.Scripts
 
             float x = 0f;
             float z = 0f;
-            if (Input.GetKey(KeyCode.D)) x += 1f;
-            if (Input.GetKey(KeyCode.A)) x -= 1f;
-            if (Input.GetKey(KeyCode.W)) z += 1f;
-            if (Input.GetKey(KeyCode.S)) z -= 1f;
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) x += 1f;
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) x -= 1f;
+
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) z += 1f;
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) z -= 1f;
 
             Vector3 move = (transform.right * x + transform.forward * z);
             if (move.sqrMagnitude > 1f) move.Normalize();
