@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\ControlsSceneLoader.cs" />
     <Compile Include="Assets\Scripts\UI\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\NPC_Wander.cs" />
+    <Compile Include="Assets\Scripts\MenuBackOnEsc.cs" />
     <Compile Include="Assets\Scripts\GamePlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerCarrierOnPlatform.cs" />
     <Compile Include="Assets\Scripts\VolcanoEruptionController.cs" />
