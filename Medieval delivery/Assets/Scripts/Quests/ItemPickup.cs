@@ -43,7 +43,7 @@ public class ItemPickup : MonoBehaviour
             if (PickupPromptUI.I != null)
                 PickupPromptUI.I.Hide();
 
-            gameObject.SetActive(false); // hide item
+            gameObject.SetActive(false); 
         }
     }
 }

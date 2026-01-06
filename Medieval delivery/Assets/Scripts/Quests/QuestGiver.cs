@@ -4,8 +4,8 @@ using UnityEngine;
 public class QuestGiver : MonoBehaviour
 {
     [Header("Identity")]
-    public string giverKey;      // ex: "Coin", "StarCoin", ...
-    public string displayName;   // if empty, uses giverKey
+    public string giverKey;      
+    public string displayName;   
 
     [Header("Quest pool")]
     public bool loadFromCatalog = true;
@@ -38,7 +38,7 @@ public class QuestGiver : MonoBehaviour
             return;
         }
 
-        // If already has an active quest: either turn-in (if player has items) or "finish first"
+        
         if (_activeQuest != null && _activeQuest.isActive && !_activeQuest.isCompleted)
         {
             if (PlayerInventory.I.Has(_activeQuest.itemTag, _activeQuest.itemCount))
@@ -62,7 +62,7 @@ public class QuestGiver : MonoBehaviour
             return;
         }
 
-        // Pick a new quest
+       
         var available = new List<Quest>();
         foreach (var q in quests)
             if (!q.isCompleted && !q.isActive)

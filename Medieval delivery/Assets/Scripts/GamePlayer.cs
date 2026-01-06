@@ -9,14 +9,14 @@ namespace Assets.Lab9Assets.Scripts
         [SerializeField] private float _SprintMultiplier = 3f;
 
         [Header("Jump & Gravity")]
-        [SerializeField] private float _JumpHeight = 1.2f;     // pune 1.0–1.5 dupa gust
-        [SerializeField] private float _Gravity = 25f;         // 20–35 (mai mare = cade mai “snappy”)
-        [SerializeField] private float _AirControl = 1f;       // 1 = control complet in aer
-        [SerializeField] private float _GroundStickForce = 2f; // cat de tare “lipeste” de sol (1–4)
+        [SerializeField] private float _JumpHeight = 1.2f;     
+        [SerializeField] private float _Gravity = 25f;        
+        [SerializeField] private float _AirControl = 1f;       
+        [SerializeField] private float _GroundStickForce = 2f; 
 
         [Header("Jump Feel (optional, recommended)")]
-        [SerializeField] private float _CoyoteTime = 0.08f;    // poti sari putin dupa ce ai parasit solul
-        [SerializeField] private float _JumpBuffer = 0.10f;    // daca apesi putin inainte de sol, sare cand atingi
+        [SerializeField] private float _CoyoteTime = 0.08f;   
+        [SerializeField] private float _JumpBuffer = 0.10f;   
 
         [Header("Look")]
         [SerializeField] private float _SteeringSpeed = 120f;
@@ -39,7 +39,7 @@ namespace Assets.Lab9Assets.Scripts
 
         private void Update()
         {
-            // === LOOK (mouse) ===
+            
             if (Input.GetMouseButton(0))
             {
                 float yaw = Input.GetAxis("Mouse X") * _SteeringSpeed * Time.deltaTime;
@@ -51,7 +51,7 @@ namespace Assets.Lab9Assets.Scripts
                 _Camera.transform.localEulerAngles = new Vector3(_pitch, 0f, 0f);
             }
 
-            // === MOVE (WASD) ===
+            
             float speed = _MovementSpeed;
             if (Input.GetKey(KeyCode.LeftShift)) speed *= _SprintMultiplier;
 
@@ -67,7 +67,7 @@ namespace Assets.Lab9Assets.Scripts
 
             bool grounded = _cc.isGrounded;
 
-            // === Timers for nicer jump ===
+            
             if (grounded) _coyoteTimer = _CoyoteTime;
             else _coyoteTimer -= Time.deltaTime;
 
@@ -76,15 +76,13 @@ namespace Assets.Lab9Assets.Scripts
             else
                 _jumpBufferTimer -= Time.deltaTime;
 
-            // === Ground stick (fix for “bouncy landing”) ===
-            // Daca esti pe sol si cazi, NU mai acumula gravitate; tine-l lipit usor.
+            
             if (grounded && _verticalVelocity < 0f)
                 _verticalVelocity = -_GroundStickForce;
             else
                 _verticalVelocity -= _Gravity * Time.deltaTime;
 
-            // === Jump (uses jump height) ===
-            // sare daca ai apasat recent space + esti grounded (sau in coyote time)
+            
             if (_jumpBufferTimer > 0f && _coyoteTimer > 0f)
             {
                 _verticalVelocity = Mathf.Sqrt(2f * _Gravity * _JumpHeight);

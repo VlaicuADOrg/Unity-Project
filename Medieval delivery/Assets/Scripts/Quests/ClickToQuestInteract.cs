@@ -16,11 +16,11 @@ public class ClickToQuestInteract : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // dacă dai click pe UI, ignoră
+            
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            // dacă popup e deschis, nu interacționa iar
+            
             if (QuestPopupUI.I != null && QuestPopupUI.I.IsOpen)
                 return;
 

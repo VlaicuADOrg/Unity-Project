@@ -43,7 +43,7 @@ public static class QuestCatalog
         }
     }
 
-    // ---------- UI text builders ----------
+    
 
     public static string BuildGiveQuestText(string giverKey, string displayName, Quest q)
     {
@@ -169,7 +169,7 @@ public static class QuestCatalog
         return $"{displayName}:\n{line}";
     }
 
-    // ---------- Random subset ----------
+    
 
     public static List<Quest> PickRandomSubset(List<Quest> pool, int min, int max)
     {
@@ -209,11 +209,11 @@ public static class QuestCatalog
         return list;
     }
 
-    // Helper that keeps hint separate and always prints as "You can find those ..."
+    
     private static Quest Q(string request, string hint, string tag, string name, int count)
         => new Quest { text = request, findHint = hint, itemTag = tag, itemName = name, itemCount = count };
 
-    // ---------- POOLS (examples for all your characters) ----------
+    
 
     private static List<Quest> AlienPool() => new()
     { 

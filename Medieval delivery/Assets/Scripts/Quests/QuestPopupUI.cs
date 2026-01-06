@@ -7,7 +7,7 @@ public class QuestPopupUI : MonoBehaviour
     public static QuestPopupUI I { get; private set; }
 
     [SerializeField] private GameObject root;
-    [SerializeField] private TMP_Text messageText; // dacă nu ai TMP, schimbă cu UnityEngine.UI.Text
+    [SerializeField] private TMP_Text messageText; 
 
     private float _canCloseAfter;
 
@@ -26,7 +26,7 @@ public class QuestPopupUI : MonoBehaviour
         messageText.text = msg;
         root.SetActive(true);
 
-        // ca să nu se închidă din același click
+
         _canCloseAfter = Time.unscaledTime + 0.15f;
     }
 
@@ -40,7 +40,6 @@ public class QuestPopupUI : MonoBehaviour
         if (!IsOpen) return;
         if (Time.unscaledTime < _canCloseAfter) return;
 
-        // orice click / orice tastă
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
             HideImmediate();

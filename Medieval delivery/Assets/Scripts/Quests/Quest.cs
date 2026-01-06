@@ -7,7 +7,7 @@ public class Quest
     [TextArea(2, 6)]
     public string text;
 
-    // NEW: location hint (without "Where to look")
+    
     [TextArea(1, 4)]
     public string findHint;
 

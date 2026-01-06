@@ -5,8 +5,8 @@ public class PickupPromptUI : MonoBehaviour
 {
     public static PickupPromptUI I { get; private set; }
 
-    [SerializeField] private GameObject root;   // panel/holder
-    [SerializeField] private TMP_Text label;    // textul din mijloc
+    [SerializeField] private GameObject root;   
+    [SerializeField] private TMP_Text label;    
 
     private void Awake()
     {

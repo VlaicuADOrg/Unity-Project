@@ -40,7 +40,7 @@ public class QuestSceneUI : MonoBehaviour
                 $"{q.text}\n\n" +
                 $"Requirement: {q.itemCount}x {q.itemName}\n" +
                 $"Find them: {q.findHint}\n\n"+
-                $"------------------------------\n\n";
+                $"-----------------------------------------------------------------------------------------------------------\n\n";
         }
     }
 }

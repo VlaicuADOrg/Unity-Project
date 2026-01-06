@@ -37,7 +37,6 @@ public class NPC_Wander : MonoBehaviour
 
         currentWaitTime = Random.Range(minWaitTime, maxWaitTime);
 
-        // Delay random la start (CHEIA)
         Invoke(nameof(StartWander), Random.Range(0.2f, 1.2f));
     }
 

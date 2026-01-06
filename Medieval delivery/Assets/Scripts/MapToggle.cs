@@ -22,7 +22,6 @@ public class MapToggle : MonoBehaviour
             Cursor.visible = show;
             Cursor.lockState = show ? CursorLockMode.None : CursorLockMode.Locked;
 
-            // Time.timeScale = show ? 0f : 1f;
         }
     }
 

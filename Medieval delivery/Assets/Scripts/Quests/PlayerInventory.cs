@@ -5,14 +5,14 @@ public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory I { get; private set; }
 
-    // key = itemTag, value = count
+    
     private readonly Dictionary<string, int> _counts = new();
 
     private void Awake()
     {
         if (I != null && I != this) { Destroy(gameObject); return; }
         I = this;
-        // Optional: DontDestroyOnLoad(gameObject);
+        
     }
 
     public int CountOf(string itemTag)
