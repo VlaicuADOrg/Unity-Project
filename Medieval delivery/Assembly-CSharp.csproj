@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Scripts_Animals\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Scripts\MapToggle.cs" />
     <Compile Include="Assets\Scripts\InventorySceneLoader.cs" />
+    <Compile Include="Assets\Scripts\ScrollRemember.cs" />
     <Compile Include="Assets\Scripts\LiftPlatform.cs" />
     <Compile Include="Assets\Scripts\Quests\ClickToQuestInteract.cs" />
     <Compile Include="Assets\Scripts\Quests\ItemPickup.cs" />
