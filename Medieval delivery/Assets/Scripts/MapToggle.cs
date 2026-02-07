@@ -4,10 +4,16 @@ public class MapToggle : MonoBehaviour
 {
     [SerializeField] private GameObject mapPanel;
 
+    [Header("Cursor")]
+    [SerializeField] private bool keepCursorVisibleAfterClosingMap = true; 
+
+    private bool _prevCursorVisible;
+    private CursorLockMode _prevLockMode;
+
     private void Start()
     {
         if (mapPanel != null)
-            mapPanel.SetActive(false); 
+            mapPanel.SetActive(false);
     }
 
     private void Update()
@@ -17,12 +23,32 @@ public class MapToggle : MonoBehaviour
             if (mapPanel == null) return;
 
             bool show = !mapPanel.activeSelf;
-            mapPanel.SetActive(show);
 
-            Cursor.visible = show;
-            Cursor.lockState = show ? CursorLockMode.None : CursorLockMode.Locked;
+            if (show)
+            {
+                _prevCursorVisible = Cursor.visible;
+                _prevLockMode = Cursor.lockState;
 
+                mapPanel.SetActive(true);
+
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                mapPanel.SetActive(false);
+
+                if (keepCursorVisibleAfterClosingMap)
+                {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                else
+                {
+                    Cursor.visible = _prevCursorVisible;
+                    Cursor.lockState = _prevLockMode;
+                }
+            }
         }
     }
-
 }

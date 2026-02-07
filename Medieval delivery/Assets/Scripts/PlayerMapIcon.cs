@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMapIcon : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class PlayerMapIcon : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private RectTransform mapRect;
     [SerializeField] private RectTransform playerIcon;
+
+    [Tooltip("Optional. If null, will try to grab Image from mapRect.")]
+    [SerializeField] private Image mapImage; 
 
     [Header("World bounds source")]
     [SerializeField] private bool useCustomWorldBounds = true;
@@ -21,8 +25,8 @@ public class PlayerMapIcon : MonoBehaviour
     [SerializeField] private float mapRotationDegrees = 0f;
 
     [Header("Fine tuning (0..1 space)")]
-    [SerializeField] private Vector2 normalizedOffset = Vector2.zero; 
-    [SerializeField] private Vector2 normalizedScale = Vector2.one;   
+    [SerializeField] private Vector2 normalizedOffset = Vector2.zero;
+    [SerializeField] private Vector2 normalizedScale = Vector2.one;
 
     [Header("Debug")]
     [SerializeField] private bool debugLogs = true;
@@ -33,6 +37,12 @@ public class PlayerMapIcon : MonoBehaviour
 
     private Terrain _cachedTerrain;
     private float _nextDebugTime;
+
+    private void Awake()
+    {
+        if (mapImage == null && mapRect != null)
+            mapImage = mapRect.GetComponent<Image>();
+    }
 
     private void Start()
     {
@@ -83,32 +93,25 @@ public class PlayerMapIcon : MonoBehaviour
         hasBounds = false;
         _cachedTerrain = null;
 
-        if (useCustomWorldBounds)
+        if (useCustomWorldBounds && worldBottomLeft != null && worldTopRight != null)
         {
-            if (worldBottomLeft == null || worldTopRight == null)
-            {
-                Debug.LogWarning("PlayerMapIcon: useCustomWorldBounds is ON but corners are not assigned.");
-            }
-            else
-            {
-                minX = worldBottomLeft.position.x;
-                minZ = worldBottomLeft.position.z;
-                maxX = worldTopRight.position.x;
-                maxZ = worldTopRight.position.z;
+            minX = Mathf.Min(worldBottomLeft.position.x, worldTopRight.position.x);
+            maxX = Mathf.Max(worldBottomLeft.position.x, worldTopRight.position.x);
+            minZ = Mathf.Min(worldBottomLeft.position.z, worldTopRight.position.z);
+            maxZ = Mathf.Max(worldBottomLeft.position.z, worldTopRight.position.z);
 
-                hasBounds = true;
+            hasBounds = true;
 
-                if (debugLogs)
-                {
-                    Debug.Log(
-                        $"[PlayerMapIcon] Using CUSTOM bounds:\n" +
-                        $"  BottomLeft world: {worldBottomLeft.position}\n" +
-                        $"  TopRight world:   {worldTopRight.position}\n" +
-                        $"  Bounds X: {minX} -> {maxX}, Z: {minZ} -> {maxZ}"
-                    );
-                }
-                return;
+            if (debugLogs)
+            {
+                Debug.Log(
+                    $"[PlayerMapIcon] Using CUSTOM bounds:\n" +
+                    $"  BottomLeft world: {worldBottomLeft.position}\n" +
+                    $"  TopRight world:   {worldTopRight.position}\n" +
+                    $"  Bounds X: {minX} -> {maxX}, Z: {minZ} -> {maxZ}"
+                );
             }
+            return;
         }
 
         Terrain t2 = (player != null) ? GetTerrainForPlayer(player.position) : Terrain.activeTerrain;
@@ -141,15 +144,42 @@ public class PlayerMapIcon : MonoBehaviour
         }
     }
 
+    private Rect GetDrawRect()
+    {
+        Rect r = mapRect.rect;
+
+        if (mapImage == null || mapImage.sprite == null || !mapImage.preserveAspect)
+            return r;
+
+        float sw = mapImage.sprite.rect.width;
+        float sh = mapImage.sprite.rect.height;
+        if (sw <= 0.01f || sh <= 0.01f) return r;
+
+        float spriteAspect = sw / sh;
+        float rectAspect = r.width / r.height;
+
+        Vector2 c = r.center;
+
+        if (rectAspect > spriteAspect)
+        {
+
+            float drawW = r.height * spriteAspect;
+            return new Rect(c.x - drawW / 2f, r.yMin, drawW, r.height);
+        }
+        else
+        {
+
+            float drawH = r.width / spriteAspect;
+            return new Rect(r.xMin, c.y - drawH / 2f, r.width, drawH);
+        }
+    }
+
     private void Update()
     {
         if (!hasBounds) return;
         if (player == null || playerIcon == null || mapRect == null) return;
 
-        float w = mapRect.rect.width;
-        float h = mapRect.rect.height;
-
-        if (w <= 0.01f || h <= 0.01f) return;
+        if (mapRect.rect.width <= 0.01f || mapRect.rect.height <= 0.01f) return;
 
         float worldX = player.position.x;
         float worldZ = player.position.z;
@@ -169,14 +199,24 @@ public class PlayerMapIcon : MonoBehaviour
         nx = Mathf.Clamp01(nx * normalizedScale.x + normalizedOffset.x);
         ny = Mathf.Clamp01(ny * normalizedScale.y + normalizedOffset.y);
 
-        Vector2 p = new Vector2((nx - 0.5f) * w, (ny - 0.5f) * h);
+        Rect draw = GetDrawRect();
+
+        float localX = Mathf.Lerp(draw.xMin, draw.xMax, nx);
+        float localY = Mathf.Lerp(draw.yMin, draw.yMax, ny);
+
+        Vector2 p = new Vector2(localX, localY);
 
         if (Mathf.Abs(mapRotationDegrees) > 0.01f)
         {
+            Vector2 center = draw.center;
+            Vector2 rel = p - center;
+
             float rad = mapRotationDegrees * Mathf.Deg2Rad;
             float cos = Mathf.Cos(rad);
             float sin = Mathf.Sin(rad);
-            p = new Vector2(p.x * cos - p.y * sin, p.x * sin + p.y * cos);
+
+            rel = new Vector2(rel.x * cos - rel.y * sin, rel.x * sin + rel.y * cos);
+            p = center + rel;
         }
 
         playerIcon.anchoredPosition = p;
@@ -185,7 +225,7 @@ public class PlayerMapIcon : MonoBehaviour
         {
             _nextDebugTime = Time.unscaledTime + Mathf.Max(0.05f, debugEverySeconds);
 
-            string boundsSrc = useCustomWorldBounds && worldBottomLeft != null && worldTopRight != null
+            string boundsSrc = (useCustomWorldBounds && worldBottomLeft != null && worldTopRight != null)
                 ? "CUSTOM"
                 : (_cachedTerrain != null ? $"TERRAIN({_cachedTerrain.name})" : "UNKNOWN");
 
@@ -194,10 +234,11 @@ public class PlayerMapIcon : MonoBehaviour
                 $"  player world: {player.position}\n" +
                 $"  worldX/worldZ used: ({worldX:F2}, {worldZ:F2})\n" +
                 $"  bounds X: {minX:F2}->{maxX:F2} Z: {minZ:F2}->{maxZ:F2}\n" +
-                $"  nx/ny: ({nx:F3}, {ny:F3})  map(w,h)=({w:F1},{h:F1})\n" +
+                $"  nx/ny: ({nx:F3}, {ny:F3})\n" +
+                $"  mapRect(w,h)=({mapRect.rect.width:F1},{mapRect.rect.height:F1})  drawRect(w,h)=({draw.width:F1},{draw.height:F1})\n" +
                 $"  icon anchoredPosition: {playerIcon.anchoredPosition}\n" +
                 $"  settings: swapXZ={swapXZ} invertX={invertX} invertY={invertY} rot={mapRotationDegrees}  " +
-                $"scale={normalizedScale} offset={normalizedOffset}"
+                $"scale={normalizedScale} offset={normalizedOffset} preserveAspect={(mapImage != null && mapImage.preserveAspect)}"
             );
         }
     }
